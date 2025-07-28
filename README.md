@@ -1,7 +1,8 @@
 # git-docker
-Container Dockerfile to run git commands and connect with SSH key
 
-Specify an email when building the image using the --build-arg flag:
+Contains Dockerfile to run git commands and connect with SSH key
+
+Specify an email when building the image:
 
 ```bash
 docker build --build-arg SSH_EMAIL="your_actual_email@example.com" -t git-ssh-image .
