@@ -4,6 +4,9 @@ FROM alpine:latest
 # Define a build argument for the SSH key email
 ARG SSH_EMAIL="default@example.com"
 
+# Inatll bash
+RUN apk update && apk add bash
+
 # Install git and openssh-client (which includes ssh-agent)
 # --no-cache flag reduces image size by not caching package indexes
 RUN apk add --no-cache git openssh-client
@@ -35,4 +38,4 @@ RUN echo "--- Public SSH Key ---" && \
 
 # Set the default command to run when the container starts
 # This will keep the container running and provide a shell prompt
-CMD ["sh"]
+CMD ["bash"]
