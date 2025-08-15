@@ -32,9 +32,9 @@ RUN eval "$(ssh-agent -s)" && \
 
 # Display the public SSH key to the console
 # This will be printed during the image build process
-RUN echo "--- Public SSH Key ---" && \
-    cat /root/.ssh/id_ed25519.pub && \
-    echo "----------------------"
+RUN echo "--- Public SSH Key ---"
+RUN cat /root/.ssh/id_ed25519.pub
+RUN echo "----------------------"
 
 # Set the default command to run when the container starts
 # This will keep the container running and provide a shell prompt
