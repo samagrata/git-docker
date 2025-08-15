@@ -11,5 +11,7 @@ docker build --build-arg SSH_EMAIL="your_actual_email@example.com" -t git-ssh-im
 Add the printed SSH key to your account and start using the container to run git commands from your project directory:
 
 ```bash
-docker run -it --rm -v $(pwd):/project git-ssh-image /bin/bash <your command>
+docker run -it -v "$(pwd):/project" -w /project git-ssh-image <your command>
 ```
+
+You should configure a local email and name for this git image.
